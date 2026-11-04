@@ -1,0 +1,15 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <queries><package android:name="com.sec.android.app.sbrowser" /></queries>
+    <application android:label="Internet Tools" android:icon="@mipmap/ic_launcher" android:theme="@style/Theme.InternetTools" android:allowBackup="false">
+        <meta-data android:name="xposedmodule" android:value="true" />
+        <meta-data android:name="xposeddescription" android:value="uBlock Origin, Samsung privacy controls and external-link settings." />
+        <meta-data android:name="xposedminversion" android:value="82" />
+        <meta-data android:name="xposedscope" android:resource="@array/scope" />
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent-filter>
+        </activity>
+        <activity android:name=".DiagnosticsActivity" android:exported="false" />
+        <provider android:name=".StatusProvider" android:authorities="dev.dov.internettools.status" android:exported="true" />
+        <receiver android:name=".BridgeReceiver" android:exported="false" />
+    </application>
+</manifest>

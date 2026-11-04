@@ -1,0 +1,11 @@
+build/
+.gradle/
+local.properties
+private/
+node_modules/
+__pycache__/
+*.apk
+*.jks
+*.keystore
+*.pem
+*.key

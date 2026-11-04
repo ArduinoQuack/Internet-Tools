@@ -1,0 +1,48 @@
+plugins { id 'com.android.application' version '8.9.1' }
+
+if (System.getenv('INTERNET_TOOLS_BUILD_DIR')) {
+    layout.buildDirectory = file(System.getenv('INTERNET_TOOLS_BUILD_DIR'))
+}
+
+android {
+    namespace 'dev.dov.internettools'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'dev.dov.internettools'
+        minSdk 30
+        targetSdk 35
+        versionCode 22
+        versionName '1.0.1'
+    }
+    sourceSets { main { manifest.srcFile 'AndroidManifest.xml'; java.srcDirs = ['src']; res.srcDirs = ['res']; assets.srcDirs = ['assets'] }; test.java.srcDirs = ['tests/android'] }
+    signingConfigs {
+        releaseKey {
+            if (System.getenv('IT_KEYSTORE')) {
+                storeFile file(System.getenv('IT_KEYSTORE'))
+                storePassword System.getenv('IT_STORE_PASSWORD')
+                keyAlias System.getenv('IT_KEY_ALIAS')
+                keyPassword System.getenv('IT_KEY_PASSWORD')
+            }
+        }
+    }
+    buildTypes { release { minifyEnabled false; signingConfig System.getenv('IT_KEYSTORE') ? signingConfigs.releaseKey : signingConfigs.debug } }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_1_8; targetCompatibility JavaVersion.VERSION_1_8 }
+    testOptions { unitTests.includeAndroidResources = true }
+}
+
+dependencies {
+    implementation 'com.google.android.material:material:1.13.0'
+    compileOnly files('libs/xposed-api.jar')
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.robolectric:robolectric:4.16'
+    testImplementation files('libs/xposed-api.jar')
+}
+
+tasks.withType(Test).configureEach {
+    maxHeapSize = '2g'
+    systemProperty 'java.awt.headless', 'true'
+    systemProperty 'robolectric.dependency.repo.url', 'https://repo.maven.apache.org/maven2'
+    ['http.proxyHost', 'http.proxyPort', 'https.proxyHost', 'https.proxyPort'].each { key ->
+        if (System.getProperty(key) != null) systemProperty key, System.getProperty(key)
+    }
+}
