@@ -1,0 +1,26 @@
+<resources>
+    <style name="Theme.InternetTools" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowBackground">#000000</item>
+        <item name="android:colorBackground">#000000</item>
+        <item name="colorSurface">#000000</item>
+        <item name="colorSurfaceContainer">#121413</item>
+        <item name="colorSurfaceContainerLow">#0C0E0D</item>
+        <item name="colorSurfaceContainerHigh">#1B1E1C</item>
+        <item name="colorPrimary">#B7F2CF</item>
+        <item name="colorOnPrimary">#003923</item>
+        <item name="colorPrimaryContainer">#194D35</item>
+        <item name="colorOnPrimaryContainer">#D1FBE2</item>
+        <item name="colorSecondaryContainer">#26372D</item>
+        <item name="colorOnSecondaryContainer">#DAE8DD</item>
+        <item name="colorOnSurface">#F2F5F1</item>
+        <item name="colorOnSurfaceVariant">#ABB5AD</item>
+        <item name="colorOutline">#58645C</item>
+        <item name="colorError">#FFB4AB</item>
+        <item name="android:statusBarColor">#000000</item>
+        <item name="android:navigationBarColor">#000000</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+</resources>
