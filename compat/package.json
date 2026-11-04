@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "acorn": "^8.15.0",
+    "esbuild": "^0.25.12",
+    "fake-indexeddb": "^6.2.4",
+    "happy-dom": "^20.0.11"
+  }
+}
