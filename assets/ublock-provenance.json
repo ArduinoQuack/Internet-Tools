@@ -1,0 +1,13 @@
+{
+  "version": "1.75.0",
+  "extension_id": "fkgkibajhfbepljeaefdnfnegdcjomkh",
+  "sha256": "d688ed3f0262ec4f8bdcd4c8f65987c5444c560aeb387a9e02aca1facdfa7046",
+  "signature_verified": true,
+  "proofs": [
+    {
+      "public_key_sha256": "5a6a81097514fb940453d5d46329eca78100e3cc0c5fca508e1a413f77f567bf",
+      "matches_crx_id": true
+    }
+  ],
+  "source_url": "https://github.com/gorhill/uBlock/releases/download/1.75.0/uBlock0_1.75.0.chromium.crx"
+}
