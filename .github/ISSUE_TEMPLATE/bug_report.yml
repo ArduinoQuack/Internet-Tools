@@ -1,0 +1,19 @@
+name: Bug report
+description: Something is not working
+body:
+  - type: textarea
+    attributes:
+      label: What happened?
+      description: Include what you did and what you expected to happen.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Versions
+      description: Device, Android, Samsung Internet, Internet Tools and module framework versions.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Relevant report
+      description: Remove private URLs and other personal information before posting.
