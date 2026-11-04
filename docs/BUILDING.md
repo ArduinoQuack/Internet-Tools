@@ -3,7 +3,7 @@
 Requires JDK 17, Android SDK platform 35 and build tools 35.0.0. Set `ANDROID_HOME` or put your SDK path in `local.properties`. The wrapper downloads Gradle 8.13.
 
 ```bash
-./gradlew assembleRelease testDebugUnitTest
+bash ./gradlew assembleRelease testDebugUnitTest
 ```
 
 The APK is written to `build/outputs/apk/release/InternetTools-release.apk`. Local builds use the Android debug key unless you supply your own signing settings. They cannot update the official APK without its private signing key.
